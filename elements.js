@@ -52,25 +52,26 @@ function deleteQuestion() {
   deleteButton();
   getQuestion();
 }
-// function addAnswers() {
-//   const ul = document.createElement("ul");
-//   box.appendChild(ul);
-//   const li = document.createElement("li");
-//   li.innerText = `here is an list item`;
-//   ul.appendChild(li);
-// }
-// function deleteAnswers() {
-//   const child = document.querySelector("ul");
-//   box.removeChild(child);
-// }
 function addFinalPoints() {
-  const h2 = document.createElement("h2");
-  h2.innerHTML = `Your final point score is <span class="blink">${totalPoints}</span>`;
-  box.appendChild(h2);
+  const finalPoints = document.createElement("h2");
+  finalPoints.classList.add("final-points");
+  finalPoints.innerHTML = `Your final point score is <span class="blink">${totalPoints}</span>`;
+  box.appendChild(finalPoints);
+}
+function addReSetButton() {
+  const button = document.createElement("button");
+  button.classList.add("re-set");
+  button.innerText = "Redo Quiz";
+  button.onclick = reSetQuiz;
+  box.appendChild(button);
+}
+function deleteReSetButton() {
+  const child = document.querySelector(".re-set");
+  box.removeChild(child);
 }
 function deleteFinalPoints() {
-  const child = document.querySelector("h2");
-  box.removeChild(child);
+  const child_h2 = document.querySelector(".final-points");
+  box.removeChild(child_h2);
 }
 function addQuizDone() {
   const h2 = document.createElement("h2");

@@ -12,11 +12,23 @@ let questionCount = 0;
 let hightsPossiblePoints = 4;
 let totalPoints = 0;
 
+function reSetQuiz() {
+  currentQuestion = 0;
+  arrayOfQuestionsAsked = [];
+  questionCount = 0;
+  totalPoints = 0;
+  deleteQuizDone();
+  deleteFinalPoints();
+  deleteReSetButton();
+  getQuestion();
+}
+
 function getQuestion() {
   if (questionCount === idioms.length) {
     // ADD DELETES
     addQuizDone();
     addFinalPoints();
+    addReSetButton();
   } else {
     questionCount++;
     console.log(`arrayOfQuestionsAsked: `, arrayOfQuestionsAsked);

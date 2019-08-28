@@ -1,3 +1,16 @@
+const idioms2 = [
+  {
+    german: "um den heißen Brei herumreden",
+    english: "to talk around the hot porridge",
+    engVersion: "to beat around the bush",
+    answers: [
+      { answer: "to talk around the hot porridge" },
+      { answer: "to talk the day away" },
+      { answer: "hot cheese will make it better" },
+      { answer: "fire hot enough for cooking porridge" }
+    ]
+  }
+];
 const idioms = [
   {
     german: "um den heißen Brei herumreden",
@@ -5,42 +18,42 @@ const idioms = [
     engVersion: "to beat around the bush",
     answers: [
       { answer: "to talk around the hot porridge" },
-      { answer: "to talk around the hot porridge2" },
-      { answer: "to talk around the hot porridge3" },
-      { answer: "to talk around the hot porridge4" }
+      { answer: "to talk the day away" },
+      { answer: "hot cheese will make it better" },
+      { answer: "fire hot enough for cooking porridge" }
     ]
   },
   {
-    german: "Da kannst du Gift drauf nehmen",
-    english: "You can take poison on that",
-    engVersion: "You can bet your life on that",
+    german: "Schwein haben",
+    english: "to have a pig",
+    engVersion: "to have a stroke of luck",
     answers: [
-      { answer: "You can take poison on that" },
-      { answer: "You can take poison on that2" },
-      { answer: "You can take poison on that3" },
-      { answer: "You can take poison on that4" }
+      { answer: "to hold a pig" },
+      { answer: "don't eat baby pigs" },
+      { answer: "to have a pig" },
+      { answer: "pigs making baby pigs" }
     ]
   },
   {
-    german: "sich zum Affen machen",
-    english: "to make an ape of oneself",
-    engVersion: "to make a fool of oneself",
+    german: "Man soll den Tag nicht vor dem Abend loben",
+    english: "Don’t praise the day before the evening",
+    engVersion: "Don’t count your chicks before they hatch",
     answers: [
-      { answer: "to make an ape of oneself" },
-      { answer: "to make an ape of oneself2" },
-      { answer: "to make an ape of oneself3" },
-      { answer: "to make an ape of oneself4" }
+      { answer: "Don’t praise the day before the evening" },
+      { answer: "seize to day" },
+      { answer: "what came first the evening or the day" },
+      { answer: "today is your last day of your life" }
     ]
   },
   {
-    german: "zwei Fliegen mit einer Klappe schlagen",
-    english: "kill two flies with one swat",
-    engVersion: "to kill two birds with one stone",
+    german: "seinen Senf dazugeben",
+    english: "to add their mustard",
+    engVersion: "to put their two cents in",
     answers: [
-      { answer: "kill two flies with one swat" },
-      { answer: "kill two flies with one swat2" },
-      { answer: "kill two flies with one swat3" },
-      { answer: "kill two flies with one swat4" }
+      { answer: "add mustard last" },
+      { answer: "mustard helps the medican go down" },
+      { answer: "to add their mustard" },
+      { answer: "add the mustard first" }
     ]
   },
   {
@@ -48,10 +61,10 @@ const idioms = [
     english: "to ask for an extra sausage",
     engVersion: "to ask for special treatment",
     answers: [
-      { answer: "to ask for an extra sausage" },
-      { answer: "to ask for an extra sausage2" },
-      { answer: "to ask for an extra sausage3" },
-      { answer: "to ask for an extra sausage4" }
+      { answer: "lots of fat in her sausage" },
+      { answer: "desire a good sausage" },
+      { answer: "one sausage per person" },
+      { answer: "to ask for an extra sausage" }
     ]
   }
 ];
