@@ -20,18 +20,16 @@ function reSetQuiz() {
   deleteQuizDone();
   deleteFinalPoints();
   deleteReSetButton();
-  getQuestion();
+  setUp();
 }
 
 function getQuestion() {
   if (questionCount === idioms.length) {
-    // ADD DELETES
     addQuizDone();
     addFinalPoints();
     addReSetButton();
   } else {
     questionCount++;
-    console.log(`arrayOfQuestionsAsked: `, arrayOfQuestionsAsked);
     const randomNumber = getRamdomNumber();
     const question = getIdiom(randomNumber);
     arrayOfQuestionsAsked.push(question.innerText);
@@ -73,6 +71,41 @@ function getQuestion() {
   }
 }
 
-window.onload = function() {
+function setUp() {
+  // reSetQuiz();
+  addMainTitle();
+  addStartButton();
+}
+// function addMainTitle() {
+//   const title = document.createElement("h1");
+//   title.classList.add("title");
+//   title.innerText = `How well do you know your German idioms`;
+//   box.appendChild(title);
+// }
+function addMainTitle() {
+  const title = document.createElement("img");
+  title.classList.add("title");
+  title.setAttribute("src", "./IKiXT3Yp.gif");
+  // title.innerText = `How well do you know your German idioms`;
+  box.appendChild(title);
+}
+
+function addStartButton() {
+  const button = document.createElement("button");
+  button.classList.add("title");
+  button.innerText = "Start Quiz";
+  button.onclick = startGame;
+  box.appendChild(button);
+}
+const removeElements = elms => elms.forEach(el => el.remove());
+
+function startGame() {
+  // const title = document.querySelectorAll(".title");
+  // console.log(title);
+  // box.removeChild(title);
+  removeElements(document.querySelectorAll(".title"));
   getQuestion();
+}
+window.onload = function() {
+  setUp();
 };

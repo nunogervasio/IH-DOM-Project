@@ -50,10 +50,10 @@ const idioms = [
     english: "to add their mustard",
     engVersion: "to put their two cents in",
     answers: [
-      { answer: "add mustard last" },
+      { answer: "to add mustard last" },
       { answer: "mustard helps the medican go down" },
       { answer: "to add their mustard" },
-      { answer: "add the mustard first" }
+      { answer: "to add the mustard first" }
     ]
   },
   {
