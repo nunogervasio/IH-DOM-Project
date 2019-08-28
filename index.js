@@ -19,7 +19,7 @@ function getQuestion() {
     addFinalPoints();
   } else {
     questionCount++;
-
+    console.log(`arrayOfQuestionsAsked: `, arrayOfQuestionsAsked);
     const randomNumber = getRamdomNumber();
     const question = getIdiom(randomNumber);
     arrayOfQuestionsAsked.push(question.innerText);

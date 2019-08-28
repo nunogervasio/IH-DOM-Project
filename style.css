@@ -1,10 +1,21 @@
+:root {
+  --bg-color: linear-gradient(to right, lavender, papayawhip);
+}
 body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-image: var(--bg-color);
 }
 p {
   margin: 5px;
+  padding: 15px;
+  background-image: var(--bg-color);
+  line-height: 2.5;
+}
+h1 {
+  background-image: var(--bg-color);
+  /* width: 800px; */
+  padding: 15px 15px;
 }
 .checked {
   text-decoration: line-through black;
@@ -49,17 +60,17 @@ li {
   margin: 5px;
   transition: 0.2s ease-in-out;
 }
-span {
-  font-size: 45px;
-  font-family: cursive;
-  color: white;
-  animation: blink 1s linear infinite;
-}
+
 .blink {
   width: 200px;
   height: 50px;
   text-align: center;
   line-height: 50px;
+  font-size: 45px;
+  font-family: cursive;
+  color: black;
+  animation: blink 1s linear infinite;
+  text-decoration: underline peachpuff;
 }
 .wrong {
   color: red;
@@ -72,7 +83,10 @@ span {
   animation-duration: 0.5s;
   /* animation-delay: 0.25s; */
 }
-
+.idiom {
+  /* text-decoration: underline black; */
+  border-bottom: dotted black 2px;
+}
 li:hover {
   color: white;
   opacity: 0.8;
@@ -83,6 +97,8 @@ li:hover {
 }
 button {
   padding: 15px 20px;
+  margin-top: 20px;
+  font-size: 18px;
   background-color: white;
   border: solid white 1px;
   transition: 0.3s ease-in-out;
@@ -92,7 +108,7 @@ button:hover {
   /* background-color: whitesmoke; */
   border: solid orchid 1px;
   opacity: 0.8;
-  /* box-shadow: 2px 2px 2px 0.5px rgba(0, 0, 0, 0.2); */
+  background-image: var(--bg-color);
 }
 @keyframes bounce {
   0% {

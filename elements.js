@@ -14,14 +14,15 @@ function addCorrectMessage() {
   para.innerHTML = `<span class="blink">That's right.</span> You earned ${createMessage()} <br /> 
   ${idioms[currentQuestion].german} means ${
     idioms[currentQuestion].english
-  }.<br /> Or as the English say. ${idioms[currentQuestion].engVersion}.`;
-  //   para.innerHTML = `${idioms[0]}`;
+  }.<br /> Or as the English say. <span class="idiom">${
+    idioms[currentQuestion].engVersion
+  }</span>.`;
   box.appendChild(para);
 }
 function createMessage() {
   return possiblePoints() === 1
-    ? `<span class="blink">${possiblePoints()}</span> Point 😧`
-    : `<span class="blink">${possiblePoints()}</span> Points! 😀`;
+    ? `<span class="blink">${possiblePoints()}</span> Point`
+    : `<span class="blink">${possiblePoints()}</span> Points`;
 }
 function deleteCorrectMessage() {
   const child = document.querySelector("p");
@@ -40,7 +41,7 @@ function deletePossiblePoints() {
 function addQuestion() {
   //   const h1 = document.createElement("h1");
   //   h1.innerText = getIdiom();
-  box.appendChild(getIdiom(getRamdomNumber()));
+  box.appendChild(`getIdiom(getRamdomNumber())`);
 }
 function deleteQuestion() {
   const child_h1 = document.querySelector("h1");
@@ -64,7 +65,7 @@ function deleteQuestion() {
 // }
 function addFinalPoints() {
   const h2 = document.createElement("h2");
-  h2.innerText = `Your final point score is ${totalPoints}`;
+  h2.innerHTML = `Your final point score is <span class="blink">${totalPoints}</span>`;
   box.appendChild(h2);
 }
 function deleteFinalPoints() {
