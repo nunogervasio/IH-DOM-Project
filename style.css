@@ -1,9 +1,138 @@
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
 .checked {
-  text-decoration: line-through powderblue;
+  text-decoration: line-through black;
+}
+.checked:hover {
+  text-decoration: line-through violet;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 .box {
-  width: 600px;
-  height: 300px;
-  background-color: dodgerblue;
-  border: solid gray 3px;
+  width: 700px;
+  height: 600px;
+  background-color: peachpuff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.remove-event {
+  pointer-events: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  padding: 10px 10px;
+  border: solid white 1px;
+  margin: 5px;
+  transition: 0.2s ease-in-out;
+}
+span {
+  font-size: 45px;
+  font-family: cursive;
+  color: white;
+  animation: blink 1s linear infinite;
+}
+.blink {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.wrong {
+  color: red;
+  border: solid red 1px;
+  outline: 0;
+  /* border-color: red; */
+  padding: 15px 20px;
+  transition: all 2s ease-in;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  /* animation-delay: 0.25s; */
+}
+
+li:hover {
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  border: solid orchid 1px;
+  opacity: 0.8;
+  /* box-shadow: 2px 2px 2px 0.5px rgba(0, 0, 0, 0.2); */
+}
+button {
+  padding: 15px 20px;
+  background-color: white;
+  border: solid white 1px;
+  transition: 0.3s ease-in-out;
+}
+button:hover {
+  cursor: pointer;
+  /* background-color: whitesmoke; */
+  border: solid orchid 1px;
+  opacity: 0.8;
+  /* box-shadow: 2px 2px 2px 0.5px rgba(0, 0, 0, 0.2); */
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
