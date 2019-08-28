@@ -3,6 +3,9 @@ body {
   box-sizing: border-box;
   background-color: whitesmoke;
 }
+p {
+  margin: 5px;
+}
 .checked {
   text-decoration: line-through black;
 }

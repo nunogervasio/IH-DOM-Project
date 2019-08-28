@@ -1,17 +1,27 @@
 function addButton() {
   const button = document.createElement("button");
   button.innerText = "Next Question";
+  button.onclick = deleteQuestion;
   box.appendChild(button);
 }
+
 function deleteButton() {
   const child = document.querySelector("button");
   box.removeChild(child);
 }
 function addCorrectMessage() {
   const para = document.createElement("p");
-  para.innerHTML = `Message about user getting answer right`;
+  para.innerHTML = `<span class="blink">That's right.</span> You earned ${createMessage()} <br /> 
+  ${idioms[currentQuestion].german} means ${
+    idioms[currentQuestion].english
+  }.<br /> Or as the English say. ${idioms[currentQuestion].engVersion}.`;
   //   para.innerHTML = `${idioms[0]}`;
   box.appendChild(para);
+}
+function createMessage() {
+  return possiblePoints() === 1
+    ? `<span class="blink">${possiblePoints()}</span> Point 😧`
+    : `<span class="blink">${possiblePoints()}</span> Points! 😀`;
 }
 function deleteCorrectMessage() {
   const child = document.querySelector("p");
@@ -20,7 +30,7 @@ function deleteCorrectMessage() {
 }
 function addPossiblePoints() {
   const h3 = document.createElement("h3");
-  h3.innerHTML = `This question is worth 3 Points`;
+  h3.innerHTML = `This question is worth ${possiblePoints()} Points`;
   box.appendChild(h3);
 }
 function deletePossiblePoints() {
@@ -28,28 +38,33 @@ function deletePossiblePoints() {
   box.removeChild(child);
 }
 function addQuestion() {
-  const h1 = document.createElement("h1");
-  h1.innerText = "Here is the German idiom";
-  box.appendChild(h1);
+  //   const h1 = document.createElement("h1");
+  //   h1.innerText = getIdiom();
+  box.appendChild(getIdiom(getRamdomNumber()));
 }
 function deleteQuestion() {
-  const child = document.querySelector("h1");
-  box.removeChild(child);
+  const child_h1 = document.querySelector("h1");
+  box.removeChild(child_h1);
+  const child_ul = document.querySelector("ul");
+  box.removeChild(child_ul);
+  deleteCorrectMessage();
+  deleteButton();
+  getQuestion();
 }
-function addAnswers() {
-  const ul = document.createElement("ul");
-  box.appendChild(ul);
-  const li = document.createElement("li");
-  li.innerText = `here is an list item`;
-  ul.appendChild(li);
-}
-function deleteAnswers() {
-  const child = document.querySelector("ul");
-  box.removeChild(child);
-}
+// function addAnswers() {
+//   const ul = document.createElement("ul");
+//   box.appendChild(ul);
+//   const li = document.createElement("li");
+//   li.innerText = `here is an list item`;
+//   ul.appendChild(li);
+// }
+// function deleteAnswers() {
+//   const child = document.querySelector("ul");
+//   box.removeChild(child);
+// }
 function addFinalPoints() {
   const h2 = document.createElement("h2");
-  h2.innerText = `Your final point score is 88`;
+  h2.innerText = `Your final point score is ${totalPoints}`;
   box.appendChild(h2);
 }
 function deleteFinalPoints() {
@@ -65,4 +80,20 @@ function addQuizDone() {
 function deleteQuizDone() {
   const child = document.querySelector(".quiz-done");
   box.removeChild(child);
+}
+function addWrongAnswer(event) {
+  const targetElement = event.currentTarget;
+  targetElement.classList.add("checked");
+  const wrong = document.createElement("h3");
+  wrong.classList.add("wrong");
+  wrong.innerText = `That's Wrong. Try again`;
+  box.appendChild(wrong);
+  pointDeduction();
+  //   deletePossiblePoints();
+  //   addPossiblePoints();
+}
+function deleteWrongAnswer() {
+  const parent = document.querySelector(".box");
+  const child = document.querySelector(".wrong");
+  parent.removeChild(child);
 }
