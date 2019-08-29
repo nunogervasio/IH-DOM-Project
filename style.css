@@ -16,7 +16,6 @@ p {
 }
 h1 {
   background-image: var(--bg-color);
-  /* width: 800px; */
   padding: 15px 15px;
 }
 img.title {
