@@ -104,6 +104,6 @@ function deleteWrongAnswer() {
 function addMainTitle() {
   const title = document.createElement("img");
   title.classList.add("title");
-  title.setAttribute("src", "./IKiXT3Yp.gif");
+  title.setAttribute("src", "./header-pink.gif");
   box.appendChild(title);
 }
