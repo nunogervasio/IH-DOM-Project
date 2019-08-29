@@ -26,7 +26,6 @@ function createMessage() {
 }
 function deleteCorrectMessage() {
   const child = document.querySelector("p");
-  //   para.innerHTML = `${idioms[0]}`;
   box.removeChild(child);
 }
 function addPossiblePoints() {
@@ -67,6 +66,13 @@ function deleteReSetButton() {
   const child = document.querySelector(".re-set");
   box.removeChild(child);
 }
+function addStartButton() {
+  const button = document.createElement("button");
+  button.classList.add("title");
+  button.innerText = "Start Quiz";
+  button.onclick = startGame;
+  box.appendChild(button);
+}
 function deleteFinalPoints() {
   const child_h2 = document.querySelector(".final-points");
   box.removeChild(child_h2);
@@ -89,11 +95,15 @@ function addWrongAnswer(event) {
   wrong.innerText = `That's Wrong. Try again`;
   box.appendChild(wrong);
   pointDeduction();
-  //   deletePossiblePoints();
-  //   addPossiblePoints();
 }
 function deleteWrongAnswer() {
   const parent = document.querySelector(".box");
   const child = document.querySelector(".wrong");
   parent.removeChild(child);
+}
+function addMainTitle() {
+  const title = document.createElement("img");
+  title.classList.add("title");
+  title.setAttribute("src", "./IKiXT3Yp.gif");
+  box.appendChild(title);
 }

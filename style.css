@@ -95,7 +95,6 @@ li {
   color: orchid;
   border: solid orchid 1px;
   outline: 0;
-  /* border-color: red; */
   padding: 15px 20px;
   transition: all 2s ease-in;
   animation-name: bounce;

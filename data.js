@@ -40,9 +40,9 @@ const idioms = [
     engVersion: "Don’t count your chicks before they hatch",
     answers: [
       { answer: "Don’t praise the day before the evening" },
-      { answer: "seize to day" },
+      { answer: "seize the day" },
       { answer: "what came first the evening or the day" },
-      { answer: "today is your last day of your life" }
+      { answer: "Don’t praise the evening without a day" }
     ]
   },
   {
@@ -51,7 +51,7 @@ const idioms = [
     engVersion: "to put their two cents in",
     answers: [
       { answer: "to add mustard last" },
-      { answer: "mustard helps the medican go down" },
+      { answer: "mustard helps the medicine go down" },
       { answer: "to add their mustard" },
       { answer: "to add the mustard first" }
     ]
