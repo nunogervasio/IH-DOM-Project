@@ -17,6 +17,7 @@ p {
 h1 {
   background-image: var(--bg-color);
   padding: 15px 15px;
+  font-size: 36px;
 }
 img.title {
   margin-top: 200px;
@@ -41,19 +42,7 @@ h3 {
 .checked:hover {
   text-decoration: line-through violet;
 }
-.main-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-.box {
-  width: 900px;
-  min-height: 600px;
-  background-color: peachpuff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .btn-wrapper {
   display: flex;
   flex-direction: column;
@@ -78,6 +67,7 @@ li {
   margin: 5px;
   transition: 0.2s ease-in-out;
   text-align: center;
+  font-size: 18px;
 }
 
 .blink {
@@ -93,13 +83,12 @@ li {
 }
 .wrong {
   color: black;
-  /* color: orchid; */
   border: solid orchid 1px;
   outline: 0;
   padding: 15px 20px;
   transition: all 2s ease-in;
   animation-name: bounce;
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
 }
 .idiom {
   border-bottom: dotted black 2px;
@@ -114,7 +103,7 @@ li:hover {
 button {
   padding: 15px 20px;
   margin: 20px 0 30px 0;
-  font-size: 18px;
+  font-size: 20px;
   background-color: white;
   border: solid white 1px;
   transition: 0.3s ease-in-out;
@@ -252,4 +241,29 @@ button:hover {
     -webkit-transform: scale(2);
     opacity: 0;
   }
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 70px;
+  background-color: papayawhip;
+  color: red;
+  text-align: center;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  /* bottom: 40px; */
+  right: 50px;
+  z-index: 1;
+}
+.tooltip:hover {
+  cursor: help;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

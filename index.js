@@ -1,5 +1,21 @@
-const main = document.querySelector(".main-container");
-const box = document.querySelector(".box");
+const body = document.querySelector("body");
+const main = document.createElement("div");
+main.classList.add("main-container");
+main.style.display = "flex";
+main.style.justifyContent = "center";
+main.style.paddingTop = "50px";
+
+const box = document.createElement("div");
+box.classList.add("box");
+box.style.display = "flex";
+box.style.flexDirection = "column";
+box.style.alignItems = "center";
+box.style.width = "900px";
+box.style.minHeight = "600px";
+box.style.backgroundColor = "peachpuff";
+
+body.appendChild(main);
+main.appendChild(box);
 
 let currentQuestion = 0;
 let arrayOfQuestionsAsked = [];
@@ -38,7 +54,7 @@ function getQuestion() {
     ul = getListOfAnswers(randomNumber);
     box.appendChild(question);
     box.appendChild(ul);
-    addPulsatingDot();
+    addPulsatingDot(randomNumber);
   }
 }
 

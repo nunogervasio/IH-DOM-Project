@@ -46,9 +46,13 @@ function addQuestion() {
 }
 function deleteQuestion() {
   const child_h1 = document.querySelector("h1");
-  box.removeChild(child_h1);
+  if (child_h1) {
+    box.removeChild(child_h1);
+  }
   const child_ul = document.querySelector("ul");
-  box.removeChild(child_ul);
+  if (child_ul) {
+    box.removeChild(child_ul);
+  }
   deleteCorrectMessage();
   deleteButton();
   getQuestion();
@@ -81,7 +85,7 @@ function addStartButton() {
 }
 function deleteFinalPoints() {
   const child_h2 = document.querySelector(".final-points");
-  if (child) {
+  if (child_h2) {
     box.removeChild(child_h2);
   }
 }
@@ -121,7 +125,8 @@ function addMainTitle() {
 }
 
 /**Dot functions */
-function addPulsatingDot() {
+// const holder = document.createElement("div");
+function addPulsatingDot(randomNumber) {
   const holder = document.createElement("div");
   holder.classList.add("holder");
   const dot = document.createElement("div");
@@ -130,7 +135,43 @@ function addPulsatingDot() {
   pulse.classList.add("pulse");
   const items = [dot, pulse];
   appendChildren(holder, items);
-  box.appendChild(holder);
+  //   box.appendChild(holder);
+  /**Tooltip  */
+  const tooltip = document.createElement("div");
+  tooltip.classList.add("tooltip");
+  //
+  tooltip.addEventListener("mouseover", () => {
+    const liList = document.querySelectorAll("li");
+    let newList = Array.from(liList);
+
+    const filteredListliList = newList.filter(
+      li => li.innerText != idioms[randomNumber].english
+    );
+
+    filteredListliList.forEach(li => {
+      li.classList.add("checked");
+    });
+  });
+  //
+
+  tooltip.addEventListener("mouseout", () => {
+    const liList = document.querySelectorAll("li");
+    let newList = Array.from(liList);
+
+    const filteredListliList = newList.filter(
+      li => li.innerText != idioms[randomNumber].english
+    );
+
+    filteredListliList.forEach(li => {
+      li.classList.remove("checked");
+    });
+  });
+  const tooltiptext = document.createElement("span");
+  tooltiptext.classList.add("tooltiptext");
+  tooltiptext.innerText = "Hint 👆";
+  tooltip.appendChild(holder);
+  tooltip.appendChild(tooltiptext);
+  box.appendChild(tooltip);
 }
 
 function deletePulsatingDot() {
@@ -144,9 +185,3 @@ function appendChildren(parent, children) {
     parent.appendChild(child);
   });
 }
-
-/**TESTING */
-// function deleteElement(element) {
-//   const child = document.querySelector(element);
-//   box.removeChild(child);
-// }
