@@ -92,7 +92,8 @@ li {
   text-decoration: underline peachpuff;
 }
 .wrong {
-  color: orchid;
+  color: black;
+  /* color: orchid; */
   border: solid orchid 1px;
   outline: 0;
   padding: 15px 20px;
