@@ -25,10 +25,12 @@ function reSetQuiz() {
 
 function getQuestion() {
   if (questionCount === idioms.length) {
+    /**If quiz is done */
     addQuizDone();
     addFinalPoints();
     addReSetButton();
   } else {
+    /**If quiz continues */
     questionCount++;
     const randomNumber = getRamdomNumber();
     const question = getIdiom(randomNumber);
@@ -36,6 +38,7 @@ function getQuestion() {
     ul = getListOfAnswers(randomNumber);
     box.appendChild(question);
     box.appendChild(ul);
+    addPulsatingDot();
   }
 }
 
@@ -50,18 +53,19 @@ function getListOfAnswers(randomNumber) {
   idioms[randomNumber].answers.forEach(a => {
     const li = document.createElement("li");
     li.innerText = `${a.answer}`;
+    /**Add event listener to list item */
     li.addEventListener("click", () => {
       if (a.answer.valueOf() === idioms[randomNumber].english) {
-        addCorrectMessage();
-        addButton();
-        removeAnswerClickEvent();
-        totalPoints += possiblePoints();
-        deleteWrongAnswer();
+        clicksRightAnswer();
       } else {
         if (pointDeduction()) {
+          /**If wrong answer is already rendered => delete it before adding it again */
           deleteWrongAnswer();
+          addWrongAnswer(event);
+        } else {
+          addWrongAnswer(event);
+          deletePulsatingDot();
         }
-        addWrongAnswer(event);
       }
     });
 
@@ -75,6 +79,16 @@ function getListOfAnswers(randomNumber) {
 
   return ul;
 }
+
+function clicksRightAnswer() {
+  deletePulsatingDot();
+  addCorrectMessage();
+  addButton();
+  removeAnswerClickEvent();
+  totalPoints += possiblePoints();
+  deleteWrongAnswer();
+}
+
 window.onload = function() {
   setUp();
 };

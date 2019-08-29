@@ -7,7 +7,9 @@ function addButton() {
 
 function deleteButton() {
   const child = document.querySelector("button");
-  box.removeChild(child);
+  if (child) {
+    box.removeChild(child);
+  }
 }
 function addCorrectMessage() {
   const para = document.createElement("p");
@@ -35,7 +37,9 @@ function addPossiblePoints() {
 }
 function deletePossiblePoints() {
   const child = document.querySelector("h3");
-  box.removeChild(child);
+  if (child) {
+    box.removeChild(child);
+  }
 }
 function addQuestion() {
   box.appendChild(`getIdiom(getRamdomNumber())`);
@@ -64,7 +68,9 @@ function addReSetButton() {
 }
 function deleteReSetButton() {
   const child = document.querySelector(".re-set");
-  box.removeChild(child);
+  if (child) {
+    box.removeChild(child);
+  }
 }
 function addStartButton() {
   const button = document.createElement("button");
@@ -75,7 +81,9 @@ function addStartButton() {
 }
 function deleteFinalPoints() {
   const child_h2 = document.querySelector(".final-points");
-  box.removeChild(child_h2);
+  if (child) {
+    box.removeChild(child_h2);
+  }
 }
 function addQuizDone() {
   const h2 = document.createElement("h2");
@@ -85,7 +93,9 @@ function addQuizDone() {
 }
 function deleteQuizDone() {
   const child = document.querySelector(".quiz-done");
-  box.removeChild(child);
+  if (child) {
+    box.removeChild(child);
+  }
 }
 function addWrongAnswer(event) {
   const targetElement = event.currentTarget;
@@ -97,9 +107,11 @@ function addWrongAnswer(event) {
   pointDeduction();
 }
 function deleteWrongAnswer() {
-  const parent = document.querySelector(".box");
   const child = document.querySelector(".wrong");
-  parent.removeChild(child);
+  console.log(`deleteWrong`, child);
+  if (child) {
+    child.parentNode.removeChild(child);
+  }
 }
 function addMainTitle() {
   const title = document.createElement("img");
@@ -107,3 +119,34 @@ function addMainTitle() {
   title.setAttribute("src", "./header-pink.gif");
   box.appendChild(title);
 }
+
+/**Dot functions */
+function addPulsatingDot() {
+  const holder = document.createElement("div");
+  holder.classList.add("holder");
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  const pulse = document.createElement("div");
+  pulse.classList.add("pulse");
+  const items = [dot, pulse];
+  appendChildren(holder, items);
+  box.appendChild(holder);
+}
+
+function deletePulsatingDot() {
+  const child = document.querySelector(".holder");
+  if (child) {
+    child.parentNode.removeChild(child);
+  }
+}
+function appendChildren(parent, children) {
+  children.forEach(child => {
+    parent.appendChild(child);
+  });
+}
+
+/**TESTING */
+// function deleteElement(element) {
+//   const child = document.querySelector(element);
+//   box.removeChild(child);
+// }
