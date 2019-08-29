@@ -2,9 +2,18 @@ function addButton() {
   const button = document.createElement("button");
   button.innerText = "Next Question";
   button.onclick = deleteQuestion;
+  button.addEventListener("mouseover", buttonGerman);
+  button.addEventListener("mouseout", buttonEnglish);
   box.appendChild(button);
 }
-
+function buttonGerman() {
+  const button = document.querySelector("button");
+  button.innerText = "nächste Frage";
+}
+function buttonEnglish() {
+  const button = document.querySelector("button");
+  button.innerText = "Next Question";
+}
 function deleteButton() {
   const child = document.querySelector("button");
   if (child) {
@@ -68,8 +77,19 @@ function addReSetButton() {
   button.classList.add("re-set");
   button.innerText = "Redo Quiz";
   button.onclick = reSetQuiz;
+  button.addEventListener("mouseover", reSetGerman);
+  button.addEventListener("mouseout", reSetEnglish);
   box.appendChild(button);
 }
+function reSetGerman() {
+  const button = document.querySelector("button");
+  button.innerText = "Quiz wiederholen";
+}
+function reSetEnglish() {
+  const button = document.querySelector("button");
+  button.innerText = "Redo Quiz";
+}
+
 function deleteReSetButton() {
   const child = document.querySelector(".re-set");
   if (child) {
@@ -81,7 +101,17 @@ function addStartButton() {
   button.classList.add("title");
   button.innerText = "Start Quiz";
   button.onclick = startGame;
+  button.addEventListener("mouseover", startButtonGerman);
+  button.addEventListener("mouseout", startButtonEnglish);
   box.appendChild(button);
+}
+function startButtonGerman() {
+  const button = document.querySelector("button");
+  button.innerText = "Quiz starten";
+}
+function startButtonEnglish() {
+  const button = document.querySelector("button");
+  button.innerText = "Start Quiz";
 }
 function deleteFinalPoints() {
   const child_h2 = document.querySelector(".final-points");
@@ -112,7 +142,6 @@ function addWrongAnswer(event) {
 }
 function deleteWrongAnswer() {
   const child = document.querySelector(".wrong");
-  console.log(`deleteWrong`, child);
   if (child) {
     child.parentNode.removeChild(child);
   }
