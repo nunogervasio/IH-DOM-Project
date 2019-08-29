@@ -25,3 +25,4 @@ function removeAnswerClickEvent() {
   const allListItems = document.querySelectorAll("li");
   Array.from(allListItems).map(e => e.classList.add("remove-event"));
 }
+const removeElements = elms => elms.forEach(el => el.remove());

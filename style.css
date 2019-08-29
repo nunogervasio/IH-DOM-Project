@@ -1,5 +1,6 @@
 :root {
-  --bg-color: linear-gradient(to right, lavender, papayawhip);
+  --bg-color: linear-gradient(to right, orchid, gold);
+  /* --bg-color: linear-gradient(to right, lavender, papayawhip); */
 }
 body {
   font-family: "Roboto", sans-serif;

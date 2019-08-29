@@ -39,8 +39,6 @@ function getQuestion() {
   }
 }
 
-const removeElements = elms => elms.forEach(el => el.remove());
-
 function startGame() {
   removeElements(document.querySelectorAll(".title"));
   getQuestion();

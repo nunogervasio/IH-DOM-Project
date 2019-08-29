@@ -18,7 +18,7 @@ const idioms = [
     engVersion: "to beat around the bush",
     answers: [
       { answer: "to talk around the hot porridge" },
-      { answer: "to talk the day away" },
+      { answer: "to talk about cold porridge" },
       { answer: "hot cheese will make it better" },
       { answer: "fire hot enough for cooking porridge" }
     ]
@@ -61,8 +61,8 @@ const idioms = [
     english: "to ask for an extra sausage",
     engVersion: "to ask for special treatment",
     answers: [
-      { answer: "lots of fat in her sausage" },
-      { answer: "desire a good sausage" },
+      { answer: "lots of fat on her sausage" },
+      { answer: "to ask for an extra large sausage" },
       { answer: "one sausage per person" },
       { answer: "to ask for an extra sausage" }
     ]
